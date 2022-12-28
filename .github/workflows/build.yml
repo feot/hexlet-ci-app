@@ -14,9 +14,15 @@ jobs:
           args: --severity-threshold=high
 
       - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+
       - name: setup
         run: make setup
+
       - name: run lint
         run: make lint
+
       - name: run tests
         run: make test
