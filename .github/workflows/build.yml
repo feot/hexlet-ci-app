@@ -6,13 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: run snyk to check for vulnerabilities (critical)
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: --severity-threshold=critical
-
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
